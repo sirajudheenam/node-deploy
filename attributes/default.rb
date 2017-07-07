@@ -1,0 +1,14 @@
+default['node-deploy']['node']['version'] = '4.x'
+default['node-deploy']['app']['user'] = 'www'
+default['node-deploy']['app']['root_dir'] = '/var/www/nodeapps'
+default['node-deploy']['app']['name'] = 'demo'
+default['node-deploy']['app']['env'] = 'development'
+default['node-deploy']['app']['repo'] = 'https://github.com/phusion/passenger-nodejs-connect-demo.git'
+default['node-deploy']['app']['repo_branch'] = 'master'
+default['node-deploy']['passenger']['startup_file'] = 'app.js'
+default['node-deploy']['nginx']['port'] = 8080
+default['node-deploy']['nginx']['conf_dir'] = "/etc/nginx/conf.d"
+default['node-deploy']['server']['name'] = 'localhost'
+default['node-deploy']['server']['ip_addr'] = '127.0.0.1'
+default['node-deploy']['app']['conf_file'] = File.join(node['node-deploy']['nginx']['conf_dir'],node['node-deploy']['app']['name']) + '.conf'
+default['node-deploy']['app']['deploy_dir'] = File.join(node['node-deploy']['app']['root_dir'],node['node-deploy']['app']['name'])

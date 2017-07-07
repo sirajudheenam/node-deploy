@@ -1,0 +1,8 @@
+server {
+    listen <%= @port%>;
+    server_name <%= @server_name %> <%= @ip_addr %>;
+    root <%= @app_dir%>/<%= @app_name%>/public;
+    passenger_enabled on;
+    passenger_app_type node;
+    passenger_startup_file <%= @startup_file%>;
+}
